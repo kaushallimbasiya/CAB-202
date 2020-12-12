@@ -1,0 +1,88 @@
+Note: Below Tests are only implemented in Teensy Pew Pew Micro-controller.
+
+Test 1
+Category        : 3.i to 3.iii
+Input Sequence  : ‘Left Button pressed’
+Expected Outcome: Height of Star-fighter should be at least 4 pixels and no more than 7 pixels; Width of Starfighter should be at least 5 pixels and no more than 15 pixels; Starfighter has turret which includes in the height of star-fighter
+Actual Outcome  : Height of Star-fighter is ‘6’ pixels; Width of Starfighter is ‘8’ pixels; Starfighter has turret which includes in the height of Starfighter
+Status          : Passed
+
+
+Test 2
+Category        : 3.iv
+Input Sequence  : ‘Left Button pressed’
+Expected Outcome: When the game starts, star-fighter is horizontally centred at the bottom of the screen between rows 40 to 47.
+Actual Outcome  : Star-fighter is at position (x = LCD_X / 2 and y = 42)
+Status          : Passed
+
+
+Test 3
+Category        : 3.v
+Input Sequence  : ‘Left Button pressed’
+Expected Outcome: Star-fighter is stationary when game starts or reset.
+Actual Outcome  : Star-fighter is stationary when Left button is pressed to start the game or left button is pressed to reset the game. Initially the game is paused when left Button is pressed. 
+Status          : Passed
+
+
+Test 4
+Category        : 4.i
+Input Sequence  : ‘Left Button’’Center Button’
+Expected Outcome: Asteroids fall from the top of the screen, two seconds after the game is started or restarted.
+Actual Outcome  : When game is unpaused astroid falls from top of the screen but not after two seconds.
+Status          : Failed
+
+
+Test 5
+Category        : 4.ii
+Input Sequence  : ‘Left Button’’Center Button’
+Expected Outcome: Initially, three Asteroids spawn at random horizontal positions above the top of the screen, and move smoothly into view one row of pixels at a time 
+Actual Outcome  : Three astroids fall at a time from top of the screen and move smoothly down one row of pixel at a time
+Status          : Passed
+
+
+Test 6
+Category        : 4.v
+Input Sequence  : ‘Left Button’’Center Button’
+Expected Outcome: If an astroid touches the Deflector Shield, the object disappears and the remaining useful life of the Deflector Shield decreases. 
+Actual Outcome  : If astroids touches the Deflector Shield it disappears and Deflector Shield’s life decreases by one.
+Status          : Passed
+
+
+Test 7
+Category        : 4.ix
+Input Sequence  : ‘Left Button’’Joystick Center Button’’Joystick Center Button’
+Expected Outcome: Astroids are 7 by 7 pixels, shaped like diamond. 
+Actual Outcome  : Astroids have height and width of 7 pixels each.
+Status          : Passed
+
+
+Test 8
+Category        : 5.i to 5.iii
+Input Sequence  : ‘Left Button’’Joystick Center Button’’Joystick Down Button’
+Expected Outcome: Shows Game time, useful lives remaining and Score 
+Actual Outcome  : Shows time in seconds and lives and score in integer.I
+Status          : Passed
+
+
+Test 9
+Category        : 8.i to 8.viii
+Input Sequence  : ‘Left Button’’Joystick Center Button’’Joystick Left Button’’Joystick Right Button’’Joystick Right Button’’Joystick Left Button’
+Expected Outcome: At the beginning of the game, the Star-fighter is randomly assigned a velocity, by default, that is speed 1 in either the left or right direction; from a stationary position, pressing Joystick Left causes the Star-fighter's velocity to increase in the left direction; from a stationary position, pressing Joystick Right causes the Starfighter's velocity to increase in the right direction.
+Actual Outcome  : If ‘Joystick Left Button’ is pressed, Star-fighter’s velocity is increased in left direction and if ‘Joystick Right Button’ is pressed, it will stop Starfighter to move in left direction and  Star-fighter’s velocity will be 0. Again if ’Joystick Right Button’ is pressed, Starfighter velocity is increased in right direction and if ‘Joystick Left Button’ is pressed, it will stop Starfighter to move in right direction and  Starfighter’s velocity will be 0.
+Status          : Passed
+
+
+Test 10
+Category        : 11.i to 11.iii
+Input Sequence  : ‘Left Button’
+Expected Outcome: When teensy is initially loaded, it should show student number, game title and when the Left Button is pressed Introduction screen should be exited.
+Actual Outcome  : Student number and game title are shown when teensy is initially loaded. When Left Button is pressed introduction screen is exited if skipped.
+Status          : Passed
+
+
+Test 11
+Category        : 14.i to 14.iii
+Input Sequence  : ‘Left Button’’Joystick Center Button’’Joystick Center Button’
+Expected Outcome: When Joystick Center Button is pressed, game should paused and time should stop as well. Game resumes if Joystick Center Button is pressed again and time resumes again.
+Actual Outcome  : When Joystick Center Button is pressed game is pause and pressed again game is resumed again but time neither stops or starts. Time keeps on increasing.
+Status          : Failed
